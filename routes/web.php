@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WebControl;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/manga',[WebControl::Class,'index']);
+Route::get('/manga/cari',[WebControl::Class,'cari']);
+Route::get('/manga/join',[WebControl::Class,'kategorijoin']);
+Route::get('/manga/kategori',[WebControl::Class,'kategori']);
 Route::get('/', function () {
     return view('welcome');
 });
